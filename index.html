@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gainesville Home Services - Professional Painting Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 82, 130, 0.8), rgba(44, 82, 130, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%233182ce" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #f56565;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 101, 101, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #2c5282;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #f56565;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5282;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #3182ce;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: #f9f9f9;
+            padding: 5rem 2rem;
+        }
+
+        .process-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+
+        .process-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: #3182ce;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5282;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: #3182ce;
+            margin-bottom: 1rem;
+        }
+
+        /* Color Palette Section */
+        .color-palette {
+            background: #f4f4f4;
+            padding: 5rem 2rem;
+        }
+
+        .palette-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .palette-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+
+        .palette-content p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+
+        .color-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .color-swatch {
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 2rem;
+        }
+
+        .gallery-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5282;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: #3182ce;
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f9f9f9;
+            padding: 5rem 2rem;
+        }
+
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5282;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #3182ce;
+        }
+
+        .stars {
+            color: #f56565;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c5282;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .about-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Service Areas */
+        .service-areas {
+            background: #f4f4f4;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .service-areas h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c5282;
+        }
+
+        .service-areas p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .area-tag {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c5282;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #3182ce;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c5282;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Gainesville Home Services</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Professional Painting Services in Gainesville</h1>
+            <p>Transforming homes and businesses with quality craftsmanship</p>
+            <a href="#contact" class="cta-button">Get Your Free Estimate</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>800+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Customer Satisfaction</p>
+            </div>
+            <div class="stat-item">
+                <h3>5-Star</h3>
+                <p>Average Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Painting Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Interior Painting</h3>
+                <p>Transform your living spaces with expert interior painting. We handle everything from single rooms to entire homes with precision and care.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Exterior Painting</h3>
+                <p>Protect and beautify your home's exterior with durable, weather-resistant paint applications that stand the test of time.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Commercial Painting</h3>
+                <p>Professional painting services for offices, retail spaces, and commercial properties with minimal disruption to your business.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Color Consultation</h3>
+                <p>Not sure which colors to choose? Our experts provide professional color consultation to help you make the perfect selection.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪵</div>
+                <h3>Cabinet Refinishing</h3>
+                <p>Give your kitchen or bathroom a fresh look with our cabinet painting and refinishing services.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Drywall Repair</h3>
+                <p>Complete drywall repair and preparation services ensure a smooth, flawless finish for your paint job.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="process-content">
+            <h2>Our Painting Process</h2>
+            <p class="process-subtitle">Quality results through proven methods</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We visit your property for a detailed assessment and discuss your vision, timeline, and budget.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Preparation</h3>
+                    <p>Thorough surface preparation including cleaning, repairs, priming, and protecting your furniture and floors.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Painting</h3>
+                    <p>Professional application using premium paints and materials with attention to every detail.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Final Inspection</h3>
+                    <p>Complete walkthrough with you to ensure everything meets our high standards and your expectations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose Gainesville Home Services?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h3>Attention to Detail</h3>
+                <p>We take pride in delivering flawless finishes with meticulous attention to every corner and edge.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎨</div>
+                <h3>Premium Materials</h3>
+                <p>We use only top-quality paints and supplies from trusted brands for long-lasting, beautiful results.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">⏰</div>
+                <h3>On-Time Completion</h3>
+                <p>We respect your schedule and complete projects on time without compromising quality.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">👷</div>
+                <h3>Experienced Painters</h3>
+                <p>Our team consists of skilled, trained professionals with years of painting experience.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🧹</div>
+                <h3>Clean & Tidy</h3>
+                <p>We maintain a clean workspace and leave your property spotless when the job is done.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💯</div>
+                <h3>Satisfaction Guarantee</h3>
+                <p>We're not satisfied until you are. Your happiness is our top priority on every project.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="color-palette">
+        <div class="palette-content">
+            <h2>Popular Color Trends</h2>
+            <p>Need inspiration? Here are some of this year's most popular paint colors</p>
+            <div class="color-swatches">
+                <div class="color-swatch" style="background: #8B9A8C;">Sage Green</div>
+                <div class="color-swatch" style="background: #4A5759;">Charcoal</div>
+                <div class="color-swatch" style="background: #C8B8A8;">Warm Beige</div>
+                <div class="color-swatch" style="background: #2C5282;">Navy Blue</div>
+                <div class="color-swatch" style="background: #8B7E74;">Taupe</div>
+                <div class="color-swatch" style="background: #F5F5F0;">Off-White</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-content">
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">Residential Interiors</div>
+                <div class="gallery-item">Exterior Transformations</div>
+                <div class="gallery-item">Commercial Projects</div>
+                <div class="gallery-item">Cabinet Refinishing</div>
+                <div class="gallery-item">Before & After</div>
+                <div class="gallery-item">Color Consultations</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonials-content">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Gainesville Home Services did an amazing job painting our entire house. The team was professional, clean, and the quality of work exceeded our expectations!"</p>
+                    <p class="testimonial-author">- Jennifer Martinez</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best painting company in Gainesville! They helped us choose the perfect colors and the finished product looks incredible. Highly recommend!"</p>
+                    <p class="testimonial-author">- David Thompson</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Professional, punctual, and perfectionist! They transformed our outdated kitchen cabinets and now they look brand new. Worth every penny."</p>
+                    <p class="testimonial-author">- Amanda Williams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div>
+                <h2>About Gainesville Home Services</h2>
+                <p>Gainesville Home Services has been the trusted name for professional painting in Gainesville, FL for over a decade. We're a locally owned and operated business committed to delivering exceptional painting services to homeowners and businesses throughout the area.</p>
+                <p>Our team of experienced painters takes pride in every project, treating your property with the same care and attention we'd give our own homes. We believe that quality craftsmanship and customer satisfaction go hand in hand.</p>
+                <p>Whether you're looking to refresh a single room or transform your entire property, we bring the expertise, reliability, and professionalism you deserve.</p>
+                <ul class="about-list">
+                    <li>Licensed and insured</li>
+                    <li>Free estimates and consultations</li>
+                    <li>Premium quality paints and materials</li>
+                    <li>Flexible scheduling options</li>
+                    <li>100% satisfaction guarantee</li>
+                    <li>Competitive pricing</li>
+                </ul>
+            </div>
+            <div style="background: #3182ce; height: 400px; border-radius: 10px;"></div>
+        </div>
+    </section>
+
+    <section class="service-areas">
+        <h2>Serving Gainesville & Surrounding Areas</h2>
+        <p>Proudly providing professional painting services throughout Alachua County</p>
+        <div class="areas-list">
+            <div class="area-tag">Gainesville</div>
+            <div class="area-tag">Alachua</div>
+            <div class="area-tag">Newberry</div>
+            <div class="area-tag">High Springs</div>
+            <div class="area-tag">Archer</div>
+            <div class="area-tag">Hawthorne</div>
+            <div class="area-tag">Tioga</div>
+            <div class="area-tag">Micanopy</div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Let's bring your vision to life with professional painting</p>
+        <a href="#contact" class="cta-button">Call for Your Free Estimate</a>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get Your Free Estimate Today</h2>
+        <p>Contact us to schedule your consultation. We'll provide a detailed estimate with no obligation!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>📞 Phone</strong>
+                (352) 870-1312
+            </div>
+            <div class="contact-item">
+                <strong>📧 Email</strong>
+                info@gainesvillehomeservices.com
+            </div>
+            <div class="contact-item">
+                <strong>📍 Location</strong>
+                Gainesville, FL
+            </div>
+            <div class="contact-item">
+                <strong>🕐 Hours</strong>
+                Mon-Fri: 8AM - 6PM<br>Sat: 9AM - 4PM
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Gainesville Home Services. All rights reserved. | Licensed & Insured</p>
+    </footer>
+</body>
+</html>
